@@ -1,5 +1,13 @@
 import React from "react";
-function App() {
-  return <h1>helloReact</h1>;
+import Frontend from "./frontend-task/Frontend";
+
+class App extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Frontend />
+      </React.Fragment>
+    );
+  }
 }
-export default App;
+export default Frontend;
