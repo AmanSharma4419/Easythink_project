@@ -4,16 +4,23 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
+// All Requires Of The Routing Section
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 // Mounting The Express Application
 var app = express();
 
-// view engine setup
+// view engine setup + middlewares
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, "public")));
 
 // Adding The Webpack To Run Application In The Single Enviroment!
 if (process.env.NODE_ENV === "development") {
@@ -31,11 +38,19 @@ if (process.env.NODE_ENV === "development") {
   app.use(require("webpack-hot-middleware")(compiler));
 }
 
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+// Creating The Mongoose Connection
+mongoose.connect(
+  "mongodb://localhost:27017/Attendence_Application",
+  { useNewUrlParser: true },
+  err => {
+    if (err) {
+      console.log(err, "Not Connected To DB");
+    } else {
+      console.log("Connected Sucessfully TO DB");
+    }
+  }
+);
+
 // Providing The Api Paths
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
@@ -55,5 +70,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
 // Exporting The Server File
 module.exports = app;
