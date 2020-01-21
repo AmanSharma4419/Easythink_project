@@ -7,6 +7,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // All Requires Of The Routing Section
+var adminRouter = require("./routes/admin");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
@@ -40,20 +41,22 @@ if (process.env.NODE_ENV === "development") {
 
 // Creating The Mongoose Connection
 mongoose.connect(
-  "mongodb://localhost:27017/Attendence_Application",
+  "mongodb://localhost:27017/EASY_THINK",
   { useNewUrlParser: true },
   err => {
     if (err) {
       console.log(err, "Not Connected To DB");
     } else {
       console.log("Connected Sucessfully TO DB");
+      require("./utlis/seed");
     }
   }
 );
 
 // Providing The Api Paths
-app.use("/", indexRouter);
+app.use("/api/v1/admin", adminRouter);
 app.use("/users", usersRouter);
+app.use("/", indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
