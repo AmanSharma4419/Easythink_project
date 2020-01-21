@@ -1,12 +1,23 @@
 import React from "react";
+
 import "../frontend-task/Frontend.css";
+
 import logo1 from "./media/shopping.jpg";
 import logo2 from "./media/img1.jpeg";
 import logo3 from "./media/img5.png";
+import logo4 from "./media/easy.png";
+import logo5 from "./media/vishal.png";
+import logo6 from "./media/vlogo.png";
+
 class Frontend extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      Mobileno: ""
+    };
+  }
+  handleChange(e) {
+    this.setState({ ...this, Mobileno: e.target.value });
   }
   render() {
     return (
@@ -23,13 +34,13 @@ class Frontend extends React.Component {
                     fontSize: "25px"
                   }}
                 >
-                  OKK
+                  Okk
                 </button>
                 <span style={{ fontSize: "25px" }}>JI</span>
               </div>
               <div style={{ display: "flex" }}>
                 <div style={{ marginRight: "15px" }}>HOME</div>
-                <div style={{ marginRight: "15px" }}>OkkJi FOR RETAILER</div>
+                <div style={{ marginRight: "15px" }}>OkkJI FOR RETAILER</div>
                 <div style={{ marginRight: "15px" }}>OkkJi FAST</div>
                 <div style={{ marginRight: "15px" }}>Faq</div>
                 <div style={{ marginRight: "15px" }}>OFFERS</div>
@@ -70,7 +81,11 @@ class Frontend extends React.Component {
                     <i className="fab fa-app-store"></i>
                   </span>
                   <div style={{ marginTop: "25px" }}>
-                    <input type="text" placeholder="Mobile Number" />
+                    <input
+                      type="text"
+                      placeholder="Mobile Number"
+                      onChange={this.handleChange}
+                    />
                     <button>
                       <a href="#">Get App Link</a>
                     </button>
@@ -273,7 +288,7 @@ class Frontend extends React.Component {
             </div>
             <section>
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <div>
+                <div style={{ marginTop: "20px" }}>
                   <h1
                     style={{
                       color: "grey",
@@ -297,24 +312,56 @@ class Frontend extends React.Component {
                     zeal
                   </p>
                 </div>
-                <div>
+                <div style={{ marginTop: "20px" }}>
                   <div className="dot">
                     <i style={{ padding: "5px" }} className="fas fa-user"></i>
                   </div>
                   <span style={{ marginLeft: "15px" }}>Jyoti Singh</span>
                   <br />
-                  <span>Boaring road</span>
-                  <p>
-                    `Endorsement to our services that inspires enthusisam annd
-                    zeal`
+                  <span style={{ marginTop: "10px" }}>Boaring road</span>
+                  <p style={{ marginTop: "10px" }}>
+                    <q>
+                      "Endorsement to our services that inspires enthusisam annd
+                      zeal"
+                    </q>
                   </p>
-                  <p>
+                  <p style={{ marginTop: "10px" }}>
                     <i className="arrow right"></i>
                     <i class="arrow left"></i>
                   </p>
                 </div>
               </div>
-              <div>123</div>
+              <div>
+                <center>
+                  <p style={{ color: "grey", fontSize: "20px" }}>
+                    Trusted By Shop
+                  </p>
+                </center>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    marginTop: "10px"
+                  }}
+                >
+                  <img src={logo4} height="40px" width="60px" />
+                  <img src={logo5} height="40px" width="60px" />
+                  <img src={logo6} height="40px" width="60px" />
+                  <img src={logo5} height="40px" width="60px" />
+                  <img src={logo4} height="40px" width="60px" />
+                </div>
+                <div style={{ marginTop: "10px" }}>
+                  <center>
+                    <div className="dot1"></div>
+                    &nbsp;
+                    <div className="dot1"></div>
+                    &nbsp;
+                    <div className="dot1"></div>
+                    &nbsp;
+                    <div className="dot1"></div>
+                  </center>
+                </div>
+              </div>
             </section>
           </section>
         </div>
