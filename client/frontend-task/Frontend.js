@@ -1,5 +1,8 @@
 import React from "react";
 import "../frontend-task/Frontend.css";
+import logo1 from "./media/shopping.jpg";
+import logo2 from "./media/img1.jpeg";
+import logo3 from "./media/img5.png";
 class Frontend extends React.Component {
   constructor() {
     super();
@@ -8,7 +11,7 @@ class Frontend extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div style={{ marginLeft: "30px" }}>
+        <div style={{ marginLeft: "30px", marginRight: "30px" }}>
           <header>
             <nav className="Parent-nav">
               <div>
@@ -26,8 +29,8 @@ class Frontend extends React.Component {
               </div>
               <div style={{ display: "flex" }}>
                 <div style={{ marginRight: "15px" }}>HOME</div>
-                <div style={{ marginRight: "15px" }}>OKKJI FOR RETAILER</div>
-                <div style={{ marginRight: "15px" }}>OKKJi FAST</div>
+                <div style={{ marginRight: "15px" }}>OkkJi FOR RETAILER</div>
+                <div style={{ marginRight: "15px" }}>OkkJi FAST</div>
                 <div style={{ marginRight: "15px" }}>Faq</div>
                 <div style={{ marginRight: "15px" }}>OFFERS</div>
               </div>
@@ -45,7 +48,7 @@ class Frontend extends React.Component {
                   </h3>
                 </div>
 
-                <p style={{ marginTop: "15px", color: "grey" }}>
+                <p style={{ marginTop: "15px", color: "grey", width: "300px" }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -60,13 +63,13 @@ class Frontend extends React.Component {
                   <div style={{ marginBottom: "10px" }}>
                     <i className="fas fa-download"></i>
                   </div>
-                  <span style={{ marginRight: "20px" }}>
-                    <i class="fab fa-google-play"></i>
+                  <span style={{ marginRight: "20px", fontSize: "45px" }}>
+                    <i className="fab fa-google-play"></i>
                   </span>
-                  <span>
-                    <i class="fab fa-app-store"></i>
+                  <span style={{ fontSize: "45px" }}>
+                    <i className="fab fa-app-store"></i>
                   </span>
-                  <div>
+                  <div style={{ marginTop: "25px" }}>
                     <input type="text" placeholder="Mobile Number" />
                     <button>
                       <a href="#">Get App Link</a>
@@ -75,35 +78,244 @@ class Frontend extends React.Component {
                 </center>
               </div>
               <div>
-                <img src="./media/shopping.jpg" height="200px" width="200px" />
+                <img src={logo1} height="400px" width="650px" />
               </div>
             </div>
           </section>
           <section>
-            <center>
+            <center style={{ padding: "40px", fontSize: "35px" }}>
               <span>Why Customer</span>
-              <span>Loves OKKji</span>
+              &nbsp;
+              <span>Loves OkkJi</span>
             </center>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <div>
-                <img src="./media/shopping.jpg" height="300px" width="500px" />
+                <img src={logo2} height="300px" width="500px" />
               </div>
               <div style={{ marginLeft: "60px" }}>
-                <h1>Daily useable from nearby shops</h1>
-                <p>
+                <h1 style={{ fontSize: "30px", color: "blue" }}>
+                  Daily useable from nearby shops
+                </h1>
+                <p style={{ width: "650px" }}>
                   Arrow keys to increase decrease volume. Even though Israel is
                   a small country it is always in the news. The news continues
                   to report on Jews moving to Israel.
                 </p>
-                <div style={{ display: "flex", flexDirection: "column" }}>
-                  <input type="checkbox" value="Bike" /> I have a bikess
-                  <input type="checkbox" value="Bike" /> I have a bike
-                  <input type="checkbox" value="Bike" /> I have a bike
-                  <input type="checkbox" value="Bike" /> I have a bike
-                  <br />
+                <br />
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    fontSize: "14px"
+                  }}
+                >
+                  <span>
+                    <input type="checkbox" />
+                    Many Paymets Options
+                  </span>
+                  &nbsp;
+                  <span>
+                    <input type="checkbox" />
+                    Street's Store On Smartphone
+                  </span>
+                  &nbsp;
+                  <span>
+                    <input type="checkbox" />
+                    Digital Representation Of All Products
+                  </span>
+                  &nbsp;
+                  <span>
+                    <input type="checkbox" />
+                    Digitalazation Of All UDHAAR
+                  </span>
                 </div>
               </div>
             </div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "14px",
+                  marginTop: "10px"
+                }}
+              >
+                <h1
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    color: "blue"
+                  }}
+                >
+                  Home-Delivery
+                </h1>
+                <p style={{ width: "500px", marginBottom: "10px" }}>
+                  Arrow keys to increase decrease volume. Even though Israel is
+                  a small country it is always in the news. The news continues
+                  to report on Jews moving to Israel.
+                </p>
+                <span>
+                  <input type="checkbox" />
+                  Many Paymets Options
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Street's Store On Smartphone
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Digital Representation Of All Products
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Digitalazation Of All UDHAAR
+                </span>
+              </div>
+              <div>
+                <img src={logo3} height="300px" width="500px" />
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style={{ display: "flex" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "14px",
+                  marginTop: "10px"
+                }}
+              >
+                <h1
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    color: "blue"
+                  }}
+                >
+                  Khata Book
+                </h1>
+                <p style={{ width: "400px", marginBottom: "10px" }}>
+                  Arrow keys to increase decrease volume. Even though Israel is
+                  a small country it is always in the news. The news continues
+                  to report on Jews moving to Israel.
+                </p>
+                <span>
+                  <input type="checkbox" />
+                  Many Paymets Options
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Street's Store On Smartphone
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Digital Representation Of All Products
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Digitalazation Of All UDHAAR
+                </span>
+              </div>
+              <div>
+                <img src={logo1} height="230px" width="500px" />
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  fontSize: "14px",
+                  marginTop: "10px"
+                }}
+              >
+                <h1
+                  style={{
+                    fontSize: "25px",
+                    marginBottom: "10px",
+                    color: "blue"
+                  }}
+                >
+                  Credit Pay
+                </h1>
+                <p style={{ width: "400px", marginBottom: "10px" }}>
+                  Arrow keys to increase decrease volume. Even though Israel is
+                  a small country it is always in the news. The news continues
+                  to report on Jews moving to Israel.
+                </p>
+                <span>
+                  <input type="checkbox" />
+                  Many Paymets Options
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Street's Store On Smartphone
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Digital Representation Of All Products
+                </span>
+                &nbsp;
+                <span>
+                  <input type="checkbox" />
+                  Digitalazation Of All UDHAAR
+                </span>
+              </div>
+            </div>
+            <section>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div>
+                  <h1
+                    style={{
+                      color: "grey",
+                      fontSize: "20px",
+                      marginBottom: "15px"
+                    }}
+                  >
+                    Testimonial
+                  </h1>
+                  <h2
+                    style={{
+                      color: "grey",
+                      fontSize: "15px",
+                      marginBottom: "10px"
+                    }}
+                  >
+                    What Customer Say!
+                  </h2>
+                  <p style={{ color: "grey", marginBottom: "10px" }}>
+                    Endorsement to our services that inspires enthusisam annd
+                    zeal
+                  </p>
+                </div>
+                <div>
+                  <div className="dot">
+                    <i style={{ padding: "5px" }} className="fas fa-user"></i>
+                  </div>
+                  <span style={{ marginLeft: "15px" }}>Jyoti Singh</span>
+                  <br />
+                  <span>Boaring road</span>
+                  <p>
+                    `Endorsement to our services that inspires enthusisam annd
+                    zeal`
+                  </p>
+                  <p>
+                    <i className="arrow right"></i>
+                    <i class="arrow left"></i>
+                  </p>
+                </div>
+              </div>
+              <div>123</div>
+            </section>
           </section>
         </div>
       </React.Fragment>
